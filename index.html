@@ -1,9 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <title>Reno.js</title>
+    <style>
+      .container {
+        margin-top: 200px;
+      }
+      #networks > button {
+        margin-right: 5px;
+        margin-bottom: 5px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Coming soon...</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-12">
+          <img src="./img/renojs.png"/>
+        </div>
+        <div class="col-md-8 col-md-offset-1 col-sm-12">
+          <h4>A community of JavaScript Developers in Reno, NV.</h4>
+          <div id="networks">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js" crossorigin="anonymous"></script>
+    <script>
+      var networks = [{
+        link: 'http://meetup.com/renojs',
+        title: 'Meetup',
+        color: '#E0393E'
+      }, {
+        link: 'http://github.com/renojs',
+        title: ' Github',
+        icon: 'fa fa-github',
+        color: '#171515'
+      }, {
+        link: 'https://www.facebook.com/renojavascript',
+        title: ' Facebook',
+        icon: 'fa fa-facebook',
+        color: '#3b5999'
+      }, {
+        link: 'https://twitter.com/renojavascript',
+        title: ' Twitter',
+        icon: 'fa fa-twitter',
+        color: '#55acee'
+      }];
+      var $networks = $('#networks');
+      networks.forEach(function (network) {
+        var $button = $('<button class="btn btn-lg">');
+        $button.append(network.title);
+        $button.css('background-color', network.color);
+        $button.css('color', 'white');
+        if(network.icon) {
+          var $icon = $('<i class="left">').addClass(network.icon);
+          $button.prepend($icon)
+        }
+        $networks.append($button);
+      });
+    </script>
   </body>
 </html>
