@@ -14,7 +14,7 @@
       .container {
         margin-top: 200px;
       }
-      #networks > button {
+      #networks > .btn {
         margin-right: 5px;
         margin-bottom: 5px;
       }
@@ -58,7 +58,7 @@
       }];
       var $networks = $('#networks');
       networks.forEach(function (network) {
-        var $button = $('<button class="btn btn-lg">');
+        var $button = $('<a href="' + network.link + '" class="btn btn-lg">');
         $button.append(network.title);
         $button.css('background-color', network.color);
         $button.css('color', 'white');
