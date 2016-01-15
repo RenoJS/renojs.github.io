@@ -1,3 +1,3 @@
 # Reno.js Devs!
 
-http://renojs.org/
+http://www.renojs.org/
